@@ -8,7 +8,7 @@ function imageTemplate(image) {
               <img
                 src="${image.previewURL}"
                 alt="${image.tags}"
-                width="360"
+                title="${image.tags}"
               />
             </a>
           </div>

@@ -5,7 +5,10 @@ import { imagesTemplate } from './render-functions';
 
 import simpleLightbox from 'simplelightbox';
 
-const gallery = new simpleLightbox('.img-list a');
+const gallery = new simpleLightbox('.img-list a', {
+  captionDelay: 500,
+  captionPosition: 'bottom',
+});
 
 const iziToastOptions = {
   iconUrl: icon,
@@ -16,7 +19,7 @@ const iziToastOptions = {
 };
 
 export const imgListElem = document.querySelector('.img-list');
-const loadingElem = document.querySelector('.loading');
+const loadingElem = document.querySelector('.loader');
 
 export default function getFetch(typePhoto) {
   const url = `https://pixabay.com/api/?key=44327397-ede54b0a70b202831c7c411c5&q=${typePhoto}&image_type=photo
@@ -35,9 +38,10 @@ export default function getFetch(typePhoto) {
         loadingElem.classList.add('visually-hidden');
         return;
       }
-
-      imgListElem.innerHTML = imagesTemplate(data.hits);
+      console.log(data.hits);
       loadingElem.classList.add('visually-hidden');
+      imgListElem.innerHTML = imagesTemplate(data.hits);
+
       gallery.refresh();
     })
     .catch(err => {
