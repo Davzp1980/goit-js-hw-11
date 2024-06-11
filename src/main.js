@@ -7,8 +7,6 @@ const formElem = document.querySelector('.search-form');
 const btnElem = document.querySelector('.search-btn');
 const loadingElem = document.querySelector('.loading');
 
-const gallery = new simpleLightbox('.img-list a');
-
 formElem.addEventListener('submit', e => {
   e.preventDefault();
 
@@ -19,6 +17,6 @@ formElem.addEventListener('submit', e => {
     return;
   }
   getFetch(searchText);
-  gallery.refresh();
+
   formElem.reset();
 });

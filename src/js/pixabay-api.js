@@ -3,6 +3,10 @@ import 'izitoast/dist/css/iziToast.min.css';
 import icon from '../img/bi_x-octagon.png';
 import { imagesTemplate } from './render-functions';
 
+import simpleLightbox from 'simplelightbox';
+
+const gallery = new simpleLightbox('.img-list a');
+
 const iziToastOptions = {
   iconUrl: icon,
   backgroundColor: '#ef4040',
@@ -34,6 +38,7 @@ export default function getFetch(typePhoto) {
 
       imgListElem.innerHTML = imagesTemplate(data.hits);
       loadingElem.classList.add('visually-hidden');
+      gallery.refresh();
       console.log(data.hits);
     })
     .catch(err => {
