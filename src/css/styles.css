@@ -68,13 +68,21 @@
 .list-item {
   border: 1px solid #808080;
   box-sizing: border-box;
-  width: 360px;
+  width: 300px;
+  overflow: hidden;
 }
 
-.list-item img {
-  margin-bottom: 4px;
-  object-fit: fill;
+.img-box {
+  width: 300px;
+  height: 180px;
 }
+
+.img-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
 .img-list {
   display: flex;
   flex-wrap: wrap;

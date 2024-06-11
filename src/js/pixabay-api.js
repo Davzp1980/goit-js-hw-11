@@ -35,7 +35,7 @@ export default function getFetch(typePhoto) {
         loadingElem.classList.add('visually-hidden');
         return;
       }
-
+      console.log(data.hits);
       imgListElem.innerHTML = imagesTemplate(data.hits);
       loadingElem.classList.add('visually-hidden');
       gallery.refresh();
