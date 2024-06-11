@@ -15,7 +15,7 @@ const iziToastOptions = {
     'Sorry, there are no images matching your search query. Please, try again!',
 };
 
-const imgListElem = document.querySelector('.img-list');
+export const imgListElem = document.querySelector('.img-list');
 const loadingElem = document.querySelector('.loading');
 
 export default function getFetch(typePhoto) {
@@ -39,7 +39,6 @@ export default function getFetch(typePhoto) {
       imgListElem.innerHTML = imagesTemplate(data.hits);
       loadingElem.classList.add('visually-hidden');
       gallery.refresh();
-      console.log(data.hits);
     })
     .catch(err => {
       throw new Error(err);

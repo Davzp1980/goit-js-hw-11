@@ -26,7 +26,7 @@ function imageTemplate(image) {
           </li>
         </ul>
       </li>
-      </a>`;
+     </a>`;
 }
 
 export function imagesTemplate(arr) {
