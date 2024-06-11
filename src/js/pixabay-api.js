@@ -33,6 +33,7 @@ export default function getFetch(typePhoto) {
       }
 
       imgListElem.innerHTML = imagesTemplate(data.hits);
+      loadingElem.classList.add('visually-hidden');
       console.log(data.hits);
     })
     .catch(err => {

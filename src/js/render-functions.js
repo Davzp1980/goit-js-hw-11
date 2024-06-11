@@ -1,7 +1,8 @@
 function imageTemplate(image) {
-  return `<li class="list-item">
+  return `<a class="gallery-link" href="${image.largeImageURL}">
+        <li class="list-item">
         <img
-          src="${image.userImageURL}"
+          src="${image.previewURL}"
           alt="${image.tags}"
           width="360"
           
@@ -24,7 +25,8 @@ function imageTemplate(image) {
             <p>${image.downloads}</p>
           </li>
         </ul>
-      </li>`;
+      </li>
+      </a>`;
 }
 
 export function imagesTemplate(arr) {
