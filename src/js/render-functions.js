@@ -1,3 +1,5 @@
+export const imgListElem = document.querySelector('.img-list');
+
 function imageTemplate(image) {
   return `<li class="list-item">
           <div class="img-box">
@@ -34,5 +36,5 @@ function imageTemplate(image) {
 }
 
 export function imagesTemplate(arr) {
-  return arr.map(imageTemplate).join('');
+  return (imgListElem.innerHTML = arr.map(imageTemplate).join(''));
 }
